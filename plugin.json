@@ -1,0 +1,100 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "dataorigin",
+  "version": "1.0.0",
+  "description": "Find the trade shows worth attending and the exhibitors, attendees and speakers that match your ideal customer.",
+  "author": {
+    "name": "DataOrigin",
+    "email": "info@dataorigin.es",
+    "url": "https://dataorigin.es"
+  },
+  "homepage": "https://dataorigin.es/en/docs/mcp/",
+  "repository": "https://github.com/DataOrigin/dataorigin-plugin",
+  "license": "MIT",
+  "keywords": [
+    "trade shows",
+    "exhibitors",
+    "b2b",
+    "sales prospecting",
+    "events",
+    "leads"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "DataOrigin",
+        "shortDescription": "B2B trade shows and exhibitors",
+        "longDescription": "DataOrigin is a database of B2B trade shows and of the companies that take part in them and their representatives. With this plugin ChatGPT works with your DataOrigin account.\n\nAsk ChatGPT to find trade shows by sector, country and date, and to compare them by number of exhibitors and by how well they match your target profile. For each trade show you can see its exhibiting companies, attending companies and speakers, filter them by industry, country and size, and open the profile of a company with its representatives.\n\nChatGPT can also save trade shows, companies and filters to your account, so the work you do in the chat is in the DataOrigin app when you open it.\n\nSome actions unlock more data in your DataOrigin account, such as the full list of a trade show or a single company. ChatGPT tells you what the action uses and asks for your confirmation before it runs.\n\nYou need a DataOrigin account. You can disconnect ChatGPT at any time from Settings, MCP, in the DataOrigin app.",
+        "developerName": "DataOrigin",
+        "category": "Productivity",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "websiteURL": "https://dataorigin.es",
+        "supportURL": "https://dataorigin.es/en/contact-us/",
+        "privacyPolicyURL": "https://dataorigin.es/en/privacy/",
+        "termsOfServiceURL": "https://dataorigin.es/en/terms/",
+        "defaultPrompt": [
+          "Which food trade shows take place in Spain in the next six months? Order them by number of exhibitors.",
+          "Show me the Italian exhibitors of Fruit Attraction with more than 50 employees.",
+          "How many DataOrigin credits do I have left?"
+        ],
+        "brandColor": "#F2A267",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.svg"
+      },
+      "review": {
+        "demo_recording_url": "https://youtu.be/Dv3XMypW_G8",
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Search trade shows by sector, country and date",
+              "prompt": "Find packaging trade shows in France in 2027.",
+              "tools_triggered": "search_events",
+              "expected_behavior": "Lists trade shows with name, city, dates and number of exhibiting companies. No credits are spent."
+            },
+            {
+              "description": "List the companies of a trade show the account has access to",
+              "prompt": "Show me five exhibitors of Souvenir Expo 2027 in Barcelona.",
+              "tools_triggered": "search_events, search_companies",
+              "expected_behavior": "Finds the trade show and lists five exhibiting companies with country and what they do. The test account has access to this trade show, so company names and contact details are shown."
+            },
+            {
+              "description": "Read the balance of the account",
+              "prompt": "How many DataOrigin credits do I have?",
+              "tools_triggered": "get_credits",
+              "expected_behavior": "Answers the credit balance of the account (10 for the test account) and that there is no active subscription."
+            },
+            {
+              "description": "Save a trade show to the account",
+              "prompt": "Save Souvenir Expo 2027 to my DataOrigin bookmarks.",
+              "tools_triggered": "search_events, add_bookmark",
+              "expected_behavior": "Asks for confirmation of the write action if ChatGPT requires it and confirms the trade show is saved, or says it was already saved."
+            },
+            {
+              "description": "Ask the price before spending credits",
+              "prompt": "What would it cost to unlock Anuga Select Iberica 2027 in DataOrigin? Do not unlock it.",
+              "tools_triggered": "search_events, unlock_event",
+              "expected_behavior": "Tells the cost in credits and states that nothing was charged. It does not unlock anything because the user did not confirm."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Unrelated request",
+              "prompt": "What is the weather in Madrid today?"
+            },
+            {
+              "description": "Account management that the plugin does not offer",
+              "prompt": "Delete my DataOrigin account."
+            },
+            {
+              "description": "Buying credits or plans is not available in the chat",
+              "prompt": "Buy 100 DataOrigin credits with my card."
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "dataorigin": {
+      "type": "http",
+      "url": "https://api.dataorigin.es/mcp"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "dataorigin",
+  "displayName": "DataOrigin",
+  "version": "1.0.0",
+  "description": "Find the trade shows worth attending and the exhibiting companies, attending companies and speakers that match your ideal customer.",
+  "author": {
+    "name": "DataOrigin",
+    "email": "info@dataorigin.es",
+    "url": "https://dataorigin.es"
+  },
+  "homepage": "https://dataorigin.es/en/docs/mcp/",
+  "repository": "https://github.com/DataOrigin/dataorigin-plugin",
+  "license": "MIT",
+  "keywords": [
+    "trade shows",
+    "exhibitors",
+    "b2b",
+    "sales prospecting",
+    "events",
+    "leads"
+  ],
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://dataorigin.es/en/docs/mcp/",
+  "supportUrl": "https://dataorigin.es/en/contact-us/",
+  "privacyPolicyUrl": "https://dataorigin.es/en/privacy/",
+  "termsOfServiceUrl": "https://dataorigin.es/en/terms/"
+}
