@@ -121,6 +121,8 @@ You can disconnect the assistant at any time in the DataOrigin app, under Settin
 - Terms https://dataorigin.es/en/terms/
 - Support https://dataorigin.es/en/contact-us/ and info@dataorigin.es
 
+[![mcptry](https://mcptry.com/badge/es.dataorigin/dataorigin)](https://mcptry.com/servers/es.dataorigin/dataorigin)
+
 ## License
 
 MIT. See the LICENSE file.

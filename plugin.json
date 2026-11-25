@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "dataorigin",
   "version": "1.0.0",
-  "description": "Find the trade shows worth attending and the exhibitors, attendees and speakers that match your ideal customer.",
+  "description": "Find the trade shows worth attending and the exhibiting companies, attending companies and speakers that match your ideal customer.",
   "author": {
     "name": "DataOrigin",
     "email": "info@dataorigin.es",
