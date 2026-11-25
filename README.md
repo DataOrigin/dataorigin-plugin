@@ -108,6 +108,10 @@ Unlocking from the assistant works in Claude, ChatGPT, Cursor and clients that r
 
 The assistant cannot buy credits, change your plan or delete your account. You do that in the DataOrigin app.
 
+## Where the data comes from
+
+The data about companies and their representatives comes from what companies and trade shows publish on their websites and platforms, and from external providers that supply it under contract. DataOrigin processes the professional contact data of trade show participants on the basis of legitimate interest, under article 6.1.f of the GDPR and article 19 of Spanish Organic Law 3/2018. If you appear in DataOrigin and want your data corrected or removed, write to info@dataorigin.es. The full policy is at https://dataorigin.es/en/privacy/.
+
 ## Disconnect
 
 You can disconnect the assistant at any time in the DataOrigin app, under Settings, MCP.
