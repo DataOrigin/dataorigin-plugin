@@ -60,7 +60,9 @@ Ask the user to pick one trade show, or pick the first one and say so.
 Read the `get_company` answer and keep three cases apart.
 
 1. People are listed. Choose the person whose role matches the buyer roles of the profile and give the name and role. Add the LinkedIn address, email and phone when they are present. A name that is visible stays visible. Show it even when the contact details are missing.
-2. The answer lists `contacts` under `hidden`. This means no email, phone or contact point is visible to this account for that company. It does not prove that DataOrigin has one. Say that no contact details are visible. Call `unlock_company_contacts` without `confirm` to get the price of unlocking the company and tell the user that unlocking shows what DataOrigin has, which can be nothing for some companies. Never promise a contact.
+2. The answer lists `contacts` under `hidden`. This means no email, phone or contact point is visible to this account for that company. Read the entry.
+   - It has `how_to_unlock`. The company is locked for this account. Say that no contact details are visible. Call `unlock_company_contacts` without `confirm` to get the price of unlocking the company and tell the user that unlocking shows what DataOrigin has, which can be nothing for some companies. Never promise a contact.
+   - It has no `how_to_unlock`. The account already has access and DataOrigin has no contact on record. Say so and do not offer to unlock.
 3. The answer lists another block under `hidden` with the reason that it is not included in the plan. Say that the plan does not include it. Unlocking contacts does not change that.
 
 Other rules for this step.
